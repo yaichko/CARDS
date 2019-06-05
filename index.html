@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>kiska</title>
+  </head>
+  <body style="background-image:url(bg.jpg); background-size:100%">
+    <div class="enemy">
+      <h1 style="color:white">враг</h1>
+    </div>
+    <div class="player">
+      <h1 style="color:white">игрок</h1>
+    </div>
+    <img src="" style="height:200px">
+   <script>
+    let array = ["1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png","10.png"]
+
+    let enemy_block = document.querySelector(".enemy");
+    let player_block = document.querySelector(".player");
+
+     let getRandom = function(){
+        let rand = Math.random()*5
+        let round = Math.round(rand)
+        return round;
+     }
+     let randomImage = function(){
+        let rand = Math.random()*9
+        let round = Math.round(rand)
+        return round
+     }
+    
+     let createEnemyCard = function(arg){
+
+       for(let index = 0; index<arg; index = index + 1){//цикл
+        let elem = document.createElement("img")
+        enemy_block.appendChild(elem)
+        elem.style.height = "200px"
+        elem.src = array[randomImage()]
+      }
+    }
+
+     let createPlayerCard = function(arg){
+
+       for(let index = 0; index<arg; index = index + 1){//цикл
+        let elem = document.createElement("img")
+        player_block.appendChild(elem)
+        elem.style.height = "200px"
+        elem.src = array[randomImage()]
+      }
+    }
+   
+
+
+   </script>
+  </body>
+</html>
